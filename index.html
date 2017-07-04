@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+.navbar-xs { min-height:22px; border-radius:0} 
+.navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
+.navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
+
+* { padding: 0; margin: 0; }
+html, body, #foo {
+    min-height: 98.6% !important;
+    height: 98.6%;
+}
+#foo {
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default navbar-xs navbar-fixed-bottom" role="navigation" style="
+    margin-bottom: 0px;
+">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header" style="
+    height: 25px;
+">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" onclick="setURL('https://play.google.com/')" style="
+    height: 23px;
+"><b>Man</b>Phone</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a onclick="setURL('https://play.google.com/store')"><i class="glyphicon glyphicon-download"></i></a></li>
+      <li><a onclick="setURL('https://play.google.com/settings/')"><i class="glyphicon glyphicon-cog"></i></a></li>
+      <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')"><i class="glyphicon glyphicon-phone"></i></a></li>
+      <li><a onclick="setURL('https://play.google.com/store/account')"><i class="glyphicon glyphicon-user"></i></a></li>
+      <!--li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li-->
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+</div>
+<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store"></webview>
+
+<script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+  onload = () => {
+    const webview = document.querySelector('webview')
+    const indicator = document.querySelector('.indicator')
+
+    const loadstart = () => {
+      indicator.innerText = 'loading...'
+    }
+
+    const loadstop = () => {
+      indicator.innerText = ''
+    }
+
+    webview.addEventListener('did-start-loading', loadstart)
+    webview.addEventListener('did-stop-loading', loadstop)
+  }
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script>
+function setURL(url){
+    document.getElementById('foo').src = url;
+}
+</script>
+<script>
+    var webview = document.getElementById('foo');
+    webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('.gb_Dc {display: none;}')
+    });
+
+</script>
+</body>
+
+</html>
