@@ -10,7 +10,7 @@ function createWindow() {
   win = new BrowserWindow({width:800, height:600})
 
   // Load index.html
-  win.loadURL('https://boyphongsakorn.github.io/saox/');
+  win.loadURL('https://boyphongsakorn.github.io/Manroid/');
 
   win.webContents.on('new-window', function(e, url) {
     e.preventDefault();
