@@ -1,0 +1,25 @@
+{
+  "name": "manroid",
+  "version": "1.0.0",
+  "description": "Android Phone Manager",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyphongsakorn/Manroid.git"
+  },
+  "author": "BoyPhongsakorn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boyphongsakorn/Manroid/issues"
+  },
+  "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  }
+}
