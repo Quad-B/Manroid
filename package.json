@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "build" : "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icon.ico --prune=true --version-string.CompanyName=\"BoyPhongsakorn Network\" --version-string.FileDescription=\"Android (Phone) Manager\"  --version-string.ProductName=\"Manroid\""
+    "build" : "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=/icon.ico --prune=true --version-string.CompanyName=\"BoyPhongsakorn Network\" --version-string.FileDescription=\"Android (Phone) Manager\"  --version-string.ProductName=\"Manroid\""
   },
   "repository": {
     "type": "git",
