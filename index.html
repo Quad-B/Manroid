@@ -44,22 +44,19 @@ html, body, #foo {
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a onclick="setURL('https://play.google.com/store')" title="ดาวน์โหลดแอป"><i class="glyphicon glyphicon-download"></i></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="ดาวน์โหลด"><i class="glyphicon glyphicon-download"></i></a>
+        <ul class="dropdown-menu">
+          <li><a onclick="setURL('https://play.google.com/store/apps')">แอป</a></li>
+          <li><a onclick="setURL('https://play.google.com/store/movies')">ภาพยนตร์</a></li>
+          <li><a onclick="setURL('https://play.google.com/store/books')">หนังสือ</a></li>
+          <li><a onclick="setURL('https://play.google.com/store/newsstand')">แผงหนังสือ</a></li>
+          <li><a onclick="setURL('https://play.google.com/store')">ความบันเทิงอื่นๆ</a></li>
+        </ul>
+      </li>
       <li><a onclick="settings('https://play.google.com/settings/')" title="ตั้งค่าโทรศัพท์"><i class="glyphicon glyphicon-cog"></i></a></li>
       <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
       <li><a onclick="setURL('https://play.google.com/store/account')"  title="ตั้งค่าบัญชี"><i class="glyphicon glyphicon-user"></i></a></li>
-      <!--li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-          <li class="divider"></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
-      </li-->
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
