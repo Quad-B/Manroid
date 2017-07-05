@@ -10,8 +10,8 @@
 
 * { padding: 0; margin: 0; }
 html, body, #foo {
-    min-height: 98.6% !important;
-    height: 98.6%;
+    min-height: 99.1% !important;
+    height: 98%;
 }
 #foo {
     width: 100%;
@@ -19,8 +19,9 @@ html, body, #foo {
 </style>
 </head>
 <body>
-<div class="container">
-    <nav class="navbar navbar-default navbar-xs navbar-fixed-bottom" role="navigation" style="
+<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store"></webview>
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-xs" role="navigation" style="
     margin-bottom: 0px;
 ">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,7 +62,6 @@ html, body, #foo {
   </div><!-- /.navbar-collapse -->
 </nav>
 </div>
-<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store"></webview>
 
 <script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
 
