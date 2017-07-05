@@ -1,13 +1,14 @@
 {
   "name": "manroid",
-  "version": "1.0.0",
+  "version": "1.3.2",
   "description": "Android Phone Manager",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build" : "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icon.ico --prune=true --version-string.CompanyName=\"BoyPhongsakorn Network\" --version-string.FileDescription=\"Android (Phone) Manager\"  --version-string.ProductName=\"Manroid\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
   "devDependencies": {
-    "electron": "^1.6.11"
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2"
   }
 }
