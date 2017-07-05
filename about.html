@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>ยินดีต้อนรับเข้าสู่ Manroid</title>
+</head>
+<body>
+<div class="container">
+<center><h1>ยินดีต้อนรับเข้าสู่ Manroid โปรแกรมจัดการ Android ของท่าน</h1>
+<h4>โปรแกรมจัดการ Android ของท่าน ผ่าน ระบบของ Google (โหลดแอป,หาโทรศัพท์,ตั้งค่าวิธีการชำระเงิน,การสมัครใช้บริการ,รางวัล,ประวัติการสั่งซื้อ,จัดการรูปภาพที่ ซิงค์ไว้,จัดการโน็ตที่บันทึกไว้,จัดการรายชื่อผู้ติดต่อ และ อื่นๆ)</h4></center>
+</div>
+<script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+  onload = () => {
+    const webview = document.querySelector('webview')
+    const indicator = document.querySelector('.indicator')
+
+    const loadstart = () => {
+      indicator.innerText = 'loading...'
+    }
+
+    const loadstop = () => {
+      indicator.innerText = ''
+    }
+
+    webview.addEventListener('did-start-loading', loadstart)
+    webview.addEventListener('did-stop-loading', loadstop)
+  }
+</script>
+</body>
+</html>
