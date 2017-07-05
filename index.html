@@ -109,15 +109,6 @@ function setURL(url){
 }
 </script>
 <script>
-function settings(url,webview){
-    document.getElementById('foo').src = url;
-    webview = document.getElementById('foo');
-    webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('div.focus:C0ntFf {display: block !important;}')
-    });
-}
-</script>
-<script>
     var webview = document.getElementById('foo');
     webview.addEventListener('dom-ready', function () {
         webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;}')
