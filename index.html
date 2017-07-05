@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Manroid โปรแกรมจัดการ Android</title>
 <style type="text/css">
 .navbar-xs { min-height:22px; border-radius:0} 
 .navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
@@ -19,8 +20,8 @@ html, body, #foo {
 </style>
 </head>
 <body>
-<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store"></webview>
-<div class="container-fluid">
+<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store" allowpopups></webview>
+<div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
     <nav class="navbar navbar-default navbar-xs" role="navigation" style="
     margin-bottom: 0px;
 ">
@@ -43,7 +44,7 @@ html, body, #foo {
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><a onclick="setURL('https://play.google.com/store')" title="ดาวน์โหลดแอป"><i class="glyphicon glyphicon-download"></i></a></li>
-      <li><a onclick="setURL('https://play.google.com/settings/')" title="ตั้งค่าโทรศัพท์"><i class="glyphicon glyphicon-cog"></i></a></li>
+      <li><a onclick="settings('https://play.google.com/settings/')" title="ตั้งค่าโทรศัพท์"><i class="glyphicon glyphicon-cog"></i></a></li>
       <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
       <li><a onclick="setURL('https://play.google.com/store/account')"  title="ตั้งค่าบัญชี"><i class="glyphicon glyphicon-user"></i></a></li>
       <!--li class="dropdown">
@@ -108,9 +109,25 @@ function setURL(url){
 }
 </script>
 <script>
+function settings(url,webview){
+    document.getElementById('foo').src = url;
+    webview = document.getElementById('foo');
+    webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('div.focus:C0ntFf {display: block !important;}')
+    });
+}
+</script>
+<script>
     var webview = document.getElementById('foo');
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;}')
+        webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;}')
+    });
+
+</script>
+<script>
+    var webview = document.getElementById('foo');
+    webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('li.secondary-sub-nav-option.id-cannot-set-chosen.redeem-option.id-track-click {display: block;}')
     });
 
 </script>
