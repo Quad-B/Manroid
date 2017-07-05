@@ -21,7 +21,7 @@ html, body, #foo {
 </style>
 </head>
 <body>
-<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store&followup=https://play.google.com/store" allowpopups></webview>
+<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store/apps&followup=https://play.google.com/store/apps" allowpopups></webview>
 <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
     <nav class="navbar navbar-default navbar-xs navbar-fixed-bottom" role="navigation" style="
     margin-bottom: 0px;
@@ -96,14 +96,14 @@ var webview = document.getElementById('foo');
 function settings(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .b7cPmf {display: none !important;} .sIIDsc {display: none;}')
+        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .b7cPmf {display: none !important;} .sIIDsc {display: none;} .wkJZwc.rXI5N.j0qzGf {display: none;}')
     });
 }
 </script>
 <script>
 var webview = document.getElementById('foo');
 webview.addEventListener('dom-ready', function () {
-    webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;} .footer-links-container {display: none;}')
+    webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;} .footer-links-container {display: none;} .id-cluster-container.details-section.recommendation {margin-top: 0px !important;}')
 });
 
 </script>
