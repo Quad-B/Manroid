@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Manroid โปรแกรมจัดการ Android</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://use.fontawesome.com/7a2d6c7814.js"></script>
 <style type="text/css">
 .navbar-xs { min-height: 23px; border-radius:0} 
@@ -16,6 +17,10 @@ html, body, #foo {
 }
 #foo {
     width: 100%;
+}
+
+.material-icons {
+    font-size: 14px !important;
 }
 </style>
 </head>
@@ -56,6 +61,7 @@ html, body, #foo {
         </ul>
       </li>
       <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
+      <li><a onclick="setURL('https://photos.google.com/?hl=th')" title="จัดการรูปภาพใน Google Photos"><i class="material-icons">photo_library</i></a></li>
       <li><a onclick="keep('https://keep.google.com/')" title="จัดการโน็ตใน Google Keep"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
       <li><a onclick="setURL('https://play.google.com/store/account')"  title="ตั้งค่าบัญชี"><i class="glyphicon glyphicon-user"></i></a></li>
       <li><a onclick="settings('https://play.google.com/settings/')" title="การตั้งค่า"><i class="glyphicon glyphicon-cog"></i></a></li>
