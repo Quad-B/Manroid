@@ -48,10 +48,10 @@ html, body, #foo {
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a onclick="foo.goBack()" title="ย้อนกลับ"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-      <li><a onclick="foo.goForward()" title="ไปข้างหน้า"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+      <li><a onclick="foo.goBack()" data-tooltip="tooltip" title="ย้อนกลับ"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+      <li><a onclick="foo.goForward()" data-tooltip="tooltip" title="ไปข้างหน้า"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="ดาวน์โหลด"><i class="glyphicon glyphicon-download"></i></a>
+        <a href="#" data-tooltip="tooltip" class="dropdown-toggle" data-toggle="dropdown" title="ดาวน์โหลด"><i class="glyphicon glyphicon-download"></i></a>
         <ul class="dropdown-menu">
           <li><a onclick="setURL('https://play.google.com/store/apps')">แอป</a></li>
           <li><a onclick="setURL('https://play.google.com/store/movies')">ภาพยนตร์</a></li>
@@ -60,11 +60,11 @@ html, body, #foo {
           <li><a onclick="setURL('https://play.google.com/store')">ความบันเทิงอื่นๆ</a></li>
         </ul>
       </li>
-      <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
-      <li><a onclick="setURL('https://photos.google.com/?hl=th')" title="จัดการรูปภาพใน Google Photos"><i class="material-icons">photo_library</i></a></li>
-      <li><a onclick="keep('https://keep.google.com/')" title="จัดการโน็ตใน Google Keep"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
-      <li><a onclick="setURL('https://play.google.com/store/account')"  title="ตั้งค่าบัญชี"><i class="glyphicon glyphicon-user"></i></a></li>
-      <li><a onclick="settings('https://play.google.com/settings/')" title="การตั้งค่า"><i class="glyphicon glyphicon-cog"></i></a></li>
+      <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" data-tooltip="tooltip" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
+      <li><a onclick="photos('https://photos.google.com/?hl=th')" data-tooltip="tooltip" title="จัดการรูปภาพใน Google Photos"><i class="material-icons">photo_library</i></a></li>
+      <li><a onclick="keep('https://keep.google.com/')" data-tooltip="tooltip" title="จัดการโน็ตใน Google Keep"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
+      <li><a onclick="setURL('https://play.google.com/store/account')" data-tooltip="tooltip"  title="ตั้งค่าบัญชี"><i class="glyphicon glyphicon-user"></i></a></li>
+      <li><a onclick="settings('https://play.google.com/settings/')" data-tooltip="tooltip" title="การตั้งค่า"><i class="glyphicon glyphicon-cog"></i></a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -101,31 +101,44 @@ var webview = document.getElementById('foo');
 webview.addEventListener('dom-ready', function () {
     webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;} .footer-links-container {display: none;} .id-cluster-container.details-section.recommendation {margin-top: 0px !important;} div#footer-content {display: none;}')
 });
-
 </script>
 <script type="text/javascript">
 var webview = document.getElementById('foo');
 webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('li.secondary-sub-nav-option.id-cannot-set-chosen.redeem-option.id-track-click {display: block;}')
+        webview.insertCSS('li.secondary-sub-nav-option.id-cannot-set-chosen.redeem-option.id-track-click {display: block;} div#gbwa.gb_ea.gb_Xc.gb_R {display: none;} .gb_Bc.gb_Xc.gb_R.gb_Cc.gb_yc {display: none;} a.gb_Fa.gb_tf.gbp1.gb_ke.gb_xb {display: none;} a.gb_Fa.gb_sf.gb_ke.gb_xb {display: none;}')
     });
 </script>
-<script>
+<script type="text/javascript">
 var webview = document.getElementById('foo');
 function settings(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .b7cPmf {display: none !important;} .sIIDsc {display: none;} .wkJZwc.rXI5N.j0qzGf {display: none;}')
+        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .b7cPmf {display: none !important;} .sIIDsc {display: none;} .wkJZwc.rXI5N.j0qzGf {display: none;} div.gb_Cb {display: none;}')
     });
 }
 </script>
-<script>
+<script type="text/javascript">
+var webview = document.getElementById('foo');
+function photos(url){
+    document.getElementById('foo').src = url;
+    webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('div.gb_Cb {display: none;}')
+    });
+}
+</script>
+<script type="text/javascript">
 var webview = document.getElementById('foo');
 function keep(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('.gb_fb.gb_Wc.gb_hg.gb_R.gb_9e {display: inline-block !important;} .gb_Dc.gb_hb.gb_hg.gb_R {display: inline-block;} .gb_rc.gb_ib.gb_qc.gb_Od {padding-left: 0px;}')
+        webview.insertCSS('.gb_fb.gb_Wc.gb_hg.gb_R.gb_9e {display: inline-block !important;} .gb_Dc.gb_hb.gb_hg.gb_R {display: inline-block;} .gb_rc.gb_ib.gb_qc.gb_Od {padding-left: 0px;} div#gbwa.gb_ea.gb_Xc.gb_R.gb_af {display: none;} .gb_Bc.gb_Xc.gb_R.gb_Cc.gb_af.gb_yc {display: none;}')
     });
 }
+</script>
+<script type="text/javascript">
+$(function () {
+  $('[data-tooltip="tooltip"]').tooltip()
+})
 </script>
 </body>
 </html>
