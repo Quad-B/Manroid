@@ -13,15 +13,6 @@ function createWindow() {
   win.loadURL('file://' + __dirname + '/index.html');
 
   win.maximize();
-
-  win.webContents.on('new-window', function(e, url) {
-    e.preventDefault();
-    require('electron').shell.openExternal(url);
-  });
-
-  win.on('closed', () => {
-    win = null;
-  });
 }
 
 // Run create window function
