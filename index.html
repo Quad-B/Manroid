@@ -78,6 +78,7 @@ html, body, #foo {
 
 <script>
   onload = () => {
+  	const {shell} = require('electron')
     const webview = document.querySelector('webview')
     const indicator = document.querySelector('.indicator')
 
@@ -91,6 +92,13 @@ html, body, #foo {
 
     webview.addEventListener('did-start-loading', loadstart)
     webview.addEventListener('did-stop-loading', loadstop)
+
+    webview.addEventListener('new-window', (e) => {
+  	const protocol = require('url').parse(e.url).protocol
+ 		if (protocol === 'http:' || protocol === 'https:') {
+    	document.getElementById('foo').src = "http://music.sanook.com/";
+  		}
+	})
   }
 </script>
 <script>
