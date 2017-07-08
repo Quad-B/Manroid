@@ -12,9 +12,18 @@
 .navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
 
 * { padding: 0; margin: 0; }
+@media only screen and (max-width:1366px){
 html, body, #foo {
-    height: 99%;
+    height: 98.9% !important;
 }
+}
+
+@media only screen and (max-width:784px){
+html, body, #foo {
+    height: 98.5% !important;
+}
+}
+
 #foo {
     width: 100%;
 }
@@ -96,7 +105,7 @@ html, body, #foo {
     webview.addEventListener('new-window', (e) => {
   	const protocol = require('url').parse(e.url).protocol
  		if (protocol === 'http:' || protocol === 'https:') {
-    	document.getElementById('foo').src = "http://music.sanook.com/";
+    	document.getElementById('foo').src = e.url
   		}
 	})
   }
