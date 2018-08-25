@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <title>Manroid โปรแกรมจัดการ Android</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://use.fontawesome.com/7a2d6c7814.js"></script>
@@ -10,28 +10,23 @@
 .navbar-xs { min-height: 23px; border-radius:0} 
 .navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
 .navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
-
 * { padding: 0; margin: 0; }
 @media only screen and (max-width:1366px){
 html, body, #foo {
     height: 98.9% !important;
 }
 }
-
 @media only screen and (max-width:784px){
 html, body, #foo {
     height: 98.4% !important;
 }
 }
-
 #foo {
     width: 100%;
 }
-
 .material-icons {
     font-size: 16px !important;
 }
-
 #peoplecheck {
     width: 0px;
     height: 0px;
@@ -90,25 +85,22 @@ html, body, #foo {
 
 <script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
 
-<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./node_modules/popper.js/dist"></script>
 
 <script>
   onload = () => {
   	const {shell} = require('electron')
     const webview = document.querySelector('webview')
     const indicator = document.querySelector('.indicator')
-
     const loadstart = () => {
       indicator.innerText = 'loading...'
     }
-
     const loadstop = () => {
       indicator.innerText = ''
     }
-
     webview.addEventListener('did-start-loading', loadstart)
     webview.addEventListener('did-stop-loading', loadstop)
-
     webview.addEventListener('new-window', (e) => {
   	const protocol = require('url').parse(e.url).protocol
  		if (protocol === 'http:' || protocol === 'https:') {
