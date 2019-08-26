@@ -3,9 +3,6 @@
   "version": "2.0.0",
   "description": "Android Phone Manager",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "start": "electron ."
   },
