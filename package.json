@@ -7,8 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "electron .",
-    "build": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --version-string.CompanyName=\"Quad B\" --version-string.FileDescription=\"Android (Phone) Manager\"  --version-string.ProductName=\"Manroid\""
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
