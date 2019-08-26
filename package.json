@@ -22,7 +22,6 @@
   "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
   "dependencies": {},
   "devDependencies": {
-    "electron": "^6.0.3",
-    "electron-packager": "^12.1.1"
+    "electron": "^6.0.3"
   }
 }
