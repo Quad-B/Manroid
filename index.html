@@ -2,23 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Manroid โปรแกรมจัดการ Android</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://use.fontawesome.com/7a2d6c7814.js"></script>
+    <script src="https://kit.fontawesome.com/e46a42ada8.js"></script>
 <style type="text/css">
-.navbar-xs { min-height: 23px; border-radius:0} 
-.navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
-.navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
 * { padding: 0; margin: 0; }
-@media only screen and (max-width:1366px){
+@media only screen and (max-height:720px){
 html, body, #foo {
-    height: 98.9% !important;
+    height: 97% !important;
 }
 }
-@media only screen and (max-width:784px){
+@media only screen and (min-height:721px){
 html, body, #foo {
-    height: 98.4% !important;
+    height: 98.1% !important;
 }
 }
 #foo {
@@ -27,111 +24,117 @@ html, body, #foo {
 .material-icons {
     font-size: 16px !important;
 }
-#peoplecheck {
-    width: 0px;
-    height: 0px;
-}
 </style>
 </head>
 <body>
-<webview id="peoplecheck" src="https://quadbweb.firebaseapp.com/manroid.html"></webview>
 <webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store/apps&followup=https://play.google.com/store/apps" allowpopups></webview>
-<div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
-    <nav class="navbar navbar-default navbar-xs navbar-fixed-bottom" role="navigation" style="
-    margin-bottom: 0px;
-">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header" style="
-    height: 25px;
-">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" onclick="setURL('https://play.google.com/')" style="
-    height: 23px;
-"><b>Man</b>Phone</a>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><b>Man</b>Phone</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><a onclick="foo.goBack()" data-tooltip="tooltip" title="ย้อนกลับ"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-      <li><a onclick="foo.goForward()" data-tooltip="tooltip" title="ไปข้างหน้า"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-      <li class="dropdown">
-        <a href="#" data-tooltip="tooltip" class="dropdown-toggle" data-toggle="dropdown" title="ดาวน์โหลด"><i class="glyphicon glyphicon-download"></i></a>
-        <ul class="dropdown-menu">
-          <li><a onclick="setURL('https://play.google.com/store/apps')">แอป</a></li>
-          <li><a onclick="setURL('https://play.google.com/store/movies')">ภาพยนตร์</a></li>
-          <li><a onclick="setURL('https://play.google.com/store/books')">หนังสือ</a></li>
-          <li><a onclick="setURL('https://play.google.com/store/newsstand')">แผงหนังสือ</a></li>
-          <li><a onclick="setURL('https://play.google.com/store')">ความบันเทิงอื่นๆ</a></li>
-        </ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" onclick="foo.goBack()" data-tooltip="tooltip" data-placement="right" title="ย้อนกลับ"><i class="fas fa-chevron-left"></i></a>
       </li>
-      <li><a onclick="setURL('https://play.google.com/wishlist')" data-tooltip="tooltip" title="สิ่งที่ฉันอยากได้ใน Play Store"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-      <li><a onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" data-tooltip="tooltip" title="หาโทรศัพท์"><i class="glyphicon glyphicon-phone"></i></a></li>
-      <li><a onclick="photos('https://photos.google.com/?hl=th')" data-tooltip="tooltip" title="จัดการรูปภาพที่ซิงค์ใน Google Photos"><i class="material-icons">photo_library</i></a></li>
-      <li><a onclick="keep('https://keep.google.com/')" data-tooltip="tooltip" title="จัดการโน็ตใน Google Keep"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
-      <li><a onclick="setURL('https://calendar.google.com')" data-tooltip="tooltip"  title="จัดการปฏิทิน ใน Google Calendar"><i class="fa fa-calendar" aria-hidden="true"></i></a></li>
-      <li><a onclick="setURL('https://www.google.com/contacts')" data-tooltip="tooltip"  title="จัดการรายชื่อ ใน Google Contacts"><i class="fa fa-users" aria-hidden="true"></i></a></li>
-      <li><a onclick="setURL('https://play.google.com/store/account')" data-tooltip="tooltip"  title="ตั้งค่าบัญชีใน Play Store"><i class="glyphicon glyphicon-user"></i></a></li>
-      <li><a onclick="settings('https://play.google.com/settings/')" data-tooltip="tooltip" title="การตั้งค่า"><i class="glyphicon glyphicon-cog"></i></a></li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="foo.goForward()" data-tooltip="tooltip" data-placement="right" title="ไปข้างหน้า"><i class="fas fa-chevron-right"></i></a>
+      </li>
+      <li class="nav-item dropdown dropup">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-tooltip="tooltip" data-placement="right" title="ดาวน์โหลด">
+          <i class="fas fa-download"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" onclick="setURL('https://play.google.com/store/apps')" data-tooltip="tooltip" data-placement="right" title="แอป"><i class="fas fa-genderless"></i> แอป</a>
+          <a class="dropdown-item" onclick="setURL('https://play.google.com/store/movies')" data-tooltip="tooltip" data-placement="right" title="ภาพยนตร์"><i class="fas fa-film"></i> ภาพยนตร์</a>
+          <a class="dropdown-item" onclick="setURL('https://play.google.com/store/books')" data-tooltip="tooltip" data-placement="right" title="หนังสือ"><i class="fas fa-book"></i> หนังสือ</a>
+          <a class="dropdown-item" onclick="setURL('https://play.google.com/store')" data-tooltip="tooltip" data-placement="right" title="ความบันเทิงอื่นๆ"><i class="fab fa-android"></i> ความบันเทิงอื่นๆ</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setURL('https://play.google.com/wishlist')" data-tooltip="tooltip" data-placement="right" title="สิ่งที่ฉันอยากได้ใน Play Store"><i class="fas fa-heart"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setURL('https://www.google.com/android/devicemanager?hl=th&u=0')" data-tooltip="tooltip" data-placement="right" title="หาโทรศัพท์"><i class="fas fa-search-location"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="photos('https://photos.google.com/?hl=th')" data-tooltip="tooltip" data-placement="right" title="จัดการรูปภาพที่ซิงค์ใน Google Photos"><i class="fas fa-images"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="keep('https://keep.google.com/')" data-tooltip="tooltip" data-placement="right" title="จัดการโน็ตใน Google Keep"><i class="fas fa-sticky-note"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setURL('https://calendar.google.com')" data-tooltip="tooltip" data-placement="right" title="จัดการปฏิทิน ใน Google Calendar"><i class="fas fa-calendar-alt"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setURL('https://www.google.com/contacts')" data-tooltip="tooltip" data-placement="right" title="จัดการรายชื่อ ใน Google Contacts"><i class="fas fa-address-book"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setURL('https://play.google.com/store/account')" data-tooltip="tooltip" data-placement="right" title="ตั้งค่าบัญชีใน Play Store"><i class="fas fa-user-cog"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="settings('https://play.google.com/settings/')" data-tooltip="tooltip" data-placement="right" title="การตั้งค่า"><i class="fas fa-cog"></i></a>
+      </li>
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
-</div>
 
-<script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
-
-<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="./node_modules/popper.js/dist"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
   onload = () => {
-  	const {shell} = require('electron')
     const webview = document.querySelector('webview')
     const indicator = document.querySelector('.indicator')
+
     const loadstart = () => {
       indicator.innerText = 'loading...'
     }
+
     const loadstop = () => {
       indicator.innerText = ''
     }
+
     webview.addEventListener('did-start-loading', loadstart)
     webview.addEventListener('did-stop-loading', loadstop)
     webview.addEventListener('new-window', (e) => {
-  	const protocol = require('url').parse(e.url).protocol
- 		if (protocol === 'http:' || protocol === 'https:') {
-    	document.getElementById('foo').src = e.url
-  		}
-	})
+      const protocol = require('url').parse(e.url).protocol
+       if (protocol === 'http:' || protocol === 'https:') {
+        document.getElementById('foo').src = e.url
+        }
+    })
   }
-</script>
-<script>
-function setURL(url){
-    document.getElementById('foo').src = url;
-}
-</script>
-<script>
-var webview = document.getElementById('foo');
-webview.addEventListener('dom-ready', function () {
-    webview.insertCSS('.gb_Dc {display: none;} .action-bar-aux:last-child {display: none !important;} a.gb_Fa.gb_rf.gb_je.gb_xb {display: none;} .gb_ob {display: none;} a.gb_Fa.gb_sf.gbp1.gb_je.gb_xb {display: none;} .gb_sc.gb_hg.gb_R {min-width: 0px !important;} li.secondary-sub-nav-option.id-cannot-set-chosen.id-track-click {display: none;} .footer-links-container {display: none;} .id-cluster-container.details-section.recommendation {margin-top: 0px !important;} div#footer-content {display: none;}')
-});
 </script>
 <script type="text/javascript">
 var webview = document.getElementById('foo');
 webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('li.secondary-sub-nav-option.id-cannot-set-chosen.redeem-option.id-track-click {display: block;} div#gbwa.gb_ea.gb_Xc.gb_R {display: none;} .gb_Bc.gb_Xc.gb_R.gb_Cc.gb_yc {display: none;} a.gb_Fa.gb_tf.gbp1.gb_ke.gb_xb {display: none;} a.gb_Fa.gb_sf.gb_ke.gb_xb {display: none;} div.gb_Bc.gb_Xc.gb_R.gb_Cc {display: none;}')
+    webview.insertCSS('.b7cPmf {display: none !important;}')
     });
+</script>
+<script type="text/javascript">
+var webview = document.getElementById('foo');
+webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('#gbwa {display: none !important;}')
+    });
+</script>
+<script type="text/javascript">
+var webview = document.getElementById('foo');
+function setURL(url){
+    document.getElementById('foo').src = url;
+    webview.addEventListener('dom-ready', function () {
+        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: block;} .WpDbMd {padding-left: 249px !important;padding-right: 49px ;} .sIIDsc {display: block ;} .wkJZwc.rXI5N.j0qzGf {display: block ;} div.gb_Cb {display: block ;}')
+    });
+}
 </script>
 <script type="text/javascript">
 var webview = document.getElementById('foo');
 function settings(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .b7cPmf {display: none !important;} .sIIDsc {display: none;} .wkJZwc.rXI5N.j0qzGf {display: none;} div.gb_Cb {display: none;}')
+        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: none;} .WpDbMd {padding-left: 50px !important;padding-right: 50px !important;} .sIIDsc {display: none;} .wkJZwc.rXI5N.j0qzGf {display: none;} div.gb_Cb {display: none;}')
     });
 }
 </script>
@@ -140,7 +143,7 @@ var webview = document.getElementById('foo');
 function photos(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('div.gb_Cb {display: none;}')
+        webview.insertCSS('')
     });
 }
 </script>
@@ -149,7 +152,7 @@ var webview = document.getElementById('foo');
 function keep(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('.gb_fb.gb_Wc.gb_hg.gb_R.gb_9e {display: inline-block !important;} .gb_Dc.gb_hb.gb_hg.gb_R {display: inline-block;} .gb_rc.gb_ib.gb_qc.gb_Od {padding-left: 0px;} div#gbwa.gb_ea.gb_Xc.gb_R.gb_af {display: none;} .gb_Bc.gb_Xc.gb_R.gb_Cc.gb_af.gb_yc {display: none;}')
+        webview.insertCSS('')
     });
 }
 </script>
