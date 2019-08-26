@@ -7,12 +7,12 @@ let win;
 
 function createWindow() {
   // Create browser window
-  win = new BrowserWindow({minWidth:1080, minHeight:720, icon:__dirname+'/logo.png',webPreferences:{webviewTag:true}})
+  win = new BrowserWindow({minWidth:1080, minHeight:720, icon:__dirname+'/logo.png',autoHideMenuBar: true,webPreferences:{webviewTag:true}})
 
   // Load index.html
   win.loadURL('file://' + __dirname + '/index.html');
 
-  //win.maximize();
+  win.maximize();
 }
 
 // Run create window function
