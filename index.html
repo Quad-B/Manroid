@@ -8,26 +8,31 @@
     <script src="https://kit.fontawesome.com/e46a42ada8.js"></script>
 <style type="text/css">
 * { padding: 0; margin: 0; }
-@media only screen and (max-height:720px){
-html, body, #foo {
-    height: 97% !important;
+.table {
+    display: table;
 }
+html,body {
+    height: 100%;
+    min-height: 100% !important;
 }
-@media only screen and (min-height:721px){
-html, body, #foo {
-    height: 98.1% !important;
+
+.row {
+    display: table-row;
+    border: 1px solid black;
+    background: green;
 }
-}
-#foo {
-    width: 100%;
-}
-.material-icons {
-    font-size: 16px !important;
+.last
+{
+    height: 100%;
+    background: yellow;
 }
 </style>
 </head>
-<body>
-<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store/apps&followup=https://play.google.com/store/apps" allowpopups></webview>
+<body class="table" style="margin-bottom: 0px;"> 
+<div class="row last">
+<webview id="foo" src="https://accounts.google.com/ServiceLogin?service=googleplay&passive=1209600&continue=https://play.google.com/store/apps&followup=https://play.google.com/store/apps" style="height: 100%" allowpopups></webview>
+</div>
+<div class="row"> <!-- ทำให้ไม่เลย-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"><b>Man</b>Phone</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,33 +85,33 @@ html, body, #foo {
     </ul>
   </div>
 </nav>
-
+</div> <!-- ทำให้ไม่เลย-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
-  onload = () => {
-    const webview = document.querySelector('webview')
-    const indicator = document.querySelector('.indicator')
+onload = () => {
+  const webview = document.querySelector('webview')
+  const indicator = document.querySelector('.indicator')
 
-    const loadstart = () => {
-      indicator.innerText = 'loading...'
-    }
-
-    const loadstop = () => {
-      indicator.innerText = ''
-    }
-
-    webview.addEventListener('did-start-loading', loadstart)
-    webview.addEventListener('did-stop-loading', loadstop)
-    webview.addEventListener('new-window', (e) => {
-      const protocol = require('url').parse(e.url).protocol
-       if (protocol === 'http:' || protocol === 'https:') {
-        document.getElementById('foo').src = e.url
-        }
-    })
+  const loadstart = () => {
+    indicator.innerText = 'loading...'
   }
+
+  const loadstop = () => {
+    indicator.innerText = ''
+  }
+
+  webview.addEventListener('did-start-loading', loadstart)
+  webview.addEventListener('did-stop-loading', loadstop)
+  webview.addEventListener('new-window', (e) => {
+    const protocol = require('url').parse(e.url).protocol
+    if (protocol === 'http:' || protocol === 'https:') {
+      document.getElementById('foo').src = e.url
+    }
+  })
+}
 </script>
 <script type="text/javascript">
 var webview = document.getElementById('foo');
@@ -125,7 +130,7 @@ var webview = document.getElementById('foo');
 function setURL(url){
     document.getElementById('foo').src = url;
     webview.addEventListener('dom-ready', function () {
-        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: block;} .WpDbMd {padding-left: 249px !important;padding-right: 49px ;} .sIIDsc {display: block ;} .wkJZwc.rXI5N.j0qzGf {display: block ;} div.gb_Cb {display: block ;}')
+        webview.insertCSS('c-wiz.Knqxbd.tzLNed {display: block;} .WpDbMd {padding-left: 249px !important;padding-right: 49px!important;} .sIIDsc {display: block ;} .wkJZwc.rXI5N.j0qzGf {display: block ;} div.gb_Cb {display: block ;}')
     });
 }
 </script>
