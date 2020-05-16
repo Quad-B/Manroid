@@ -22,8 +22,12 @@
           "arch": [
             "ia32"
           ]
-        },{"target": "portable"}
-      ],"compression": "maximum"
+        },
+        {
+          "target": "portable"
+        }
+      ],
+      "compression": "maximum"
     }
   },
   "bugs": {
@@ -32,6 +36,6 @@
   "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
   "dependencies": {},
   "devDependencies": {
-    "electron": "^6.0.3"
+    "electron": "^6.1.11"
   }
 }
