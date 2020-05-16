@@ -4,6 +4,7 @@ language: node_js
 node_js: '10'
 before_install:
   - sudo apt install build-essential
+  - snap refresh
   - sudo snap install --classic snapcraft
   - sudo apt-get install --no-install-recommends -y libopenjp2-tools
   - sudo apt-get install --no-install-recommends -y snapcraft
