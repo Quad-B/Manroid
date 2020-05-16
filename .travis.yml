@@ -3,8 +3,10 @@ dist: xenial
 language: node_js
 node_js: '10'
 before_install:
+  - sudo apt update
   - sudo apt install build-essential
   - sudo snap refresh
+  - sudo apt install snapd
   - sudo snap install --classic snapcraft
   - sudo apt-get install --no-install-recommends -y libopenjp2-tools
   - sudo apt-get install --no-install-recommends -y snapcraft
