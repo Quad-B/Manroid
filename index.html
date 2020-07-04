@@ -202,6 +202,36 @@
     ]
   }));
 
+  menu.append(new MenuItem({
+    label: 'อื่นๆ',
+    submenu: [
+      { label: 'ติดตามบน เฟสบุ๊ค',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://www.facebook.com/QuadBCoder/')
+        } 
+      },
+      { label: 'สนันสนุน',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://ko-fi.com/boyphongsakorn')
+        }
+      },{ type: 'separator' },
+      { label: 'แจ้ง Bug',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://github.com/boyphongsakorn/Manroid/issues')
+        }
+      },
+      { label: 'เกี่ยวกับ Manroid',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://github.com/boyphongsakorn/Manroid/blob/master/README.md')
+        }
+      }
+    ]
+  }));
+
   MyTitleBar.updateMenu(menu);
 
   MyTitleBar.updateTitle('Manroid');
