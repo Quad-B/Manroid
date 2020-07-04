@@ -34,8 +34,10 @@
     "url": "https://github.com/boyphongsakorn/Manroid/issues"
   },
   "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
-  "dependencies": {},
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.2-hotfix62"
+  },
   "devDependencies": {
-    "electron": "^6.1.11"
+    "electron": "^6.1.12"
   }
 }
