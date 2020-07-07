@@ -38,6 +38,6 @@
     "custom-electron-titlebar": "^3.2.2-hotfix62"
   },
   "devDependencies": {
-    "electron": "^6.1.12"
+    "electron": "^7.2.4"
   }
 }
