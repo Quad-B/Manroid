@@ -24,8 +24,9 @@ install:
   - yarn global add electron-builder
   # - npm install --global release-it
 script:
-  - electron-builder -w --publish "always" -c.snap.publish=github
+  # - electron-builder -w --publish "always" -c.snap.publish=github
+  - electron-builder -w
   # - cd dist
   # - dir
   # - cd -
-  # - release-it 2.2.0 --config .release-it.json --no-npm.publish --no-git
+  - release-it 2.5.0 --config .release-it.json --no-npm.publish --no-git
