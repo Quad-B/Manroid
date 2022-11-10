@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: 14.x
           
+      - run: npm i -g electron-builder
+          
       - run: sudo dpkg --add-architecture i386
         if: matrix.os == 'ubuntu-latest'
       - run: wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
