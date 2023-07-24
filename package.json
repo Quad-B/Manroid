@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/boyphongsakorn/Manroid#readme",
   "dependencies": {
-    "custom-electron-titlebar": "^4.2.3"
+    "custom-electron-titlebar": "^4.2.4"
   },
   "devDependencies": {
     "electron": "^25.3.0"
