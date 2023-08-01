@@ -38,6 +38,6 @@
     "custom-electron-titlebar": "^4.2.4"
   },
   "devDependencies": {
-    "electron": "^25.3.1"
+    "electron": "^25.3.2"
   }
 }
